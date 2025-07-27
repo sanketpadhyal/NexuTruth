@@ -16,7 +16,7 @@
 
 ## 🚀 Live Demo
 
-🔗 [Visit NexuTruth (Live)](https://idyllic-florentine-8ce1dc.netlify.app/)
+🔗 [Visit NexuTruth (Live)](https://resplendent-zabaione-82cf2d.netlify.app)
 
 ---
 
