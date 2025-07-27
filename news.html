@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="assets/favicon2.png"/>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NexuTruth 🔗 - Verify News</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: url('assets/bg.png') no-repeat center center fixed;
+      background-size: cover;
+      overflow-x: hidden;
+      color: #fff;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(10px);
+      z-index: -1;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: 700;
+      color: #ff4d88;
+    }
+
+    nav a {
+      color: #fff9;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 80px 20px 120px;
+      animation: fadeInUp 1s ease;
+    }
+
+    h1 {
+      font-size: 48px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      color: #ff4d88;
+      text-shadow: 0 0 10px #ff4d8899;
+      text-align: center;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: #ccc;
+      margin-bottom: 60px;
+      max-width: 600px;
+      text-align: center;
+    }
+
+    .box {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(20px);
+      border-radius: 24px;
+      padding: 40px 30px;
+      width: 90%;
+      max-width: 720px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: all 0.4s ease;
+    }
+
+    textarea {
+      width: 100%;
+      height: 180px;
+      padding: 16px;
+      font-size: 16px;
+      background: rgba(255,255,255,0.05);
+      color: #fff;
+      border: 2px solid transparent;
+      border-radius: 14px;
+      resize: vertical;
+      outline: none;
+      transition: 0.3s ease;
+      box-shadow: inset 0 0 10px rgba(255,255,255,0.05);
+    }
+
+    textarea:focus {
+      border-color: #ff4d88;
+      background: rgba(255,255,255,0.08);
+    }
+
+    button {
+      margin-top: 24px;
+      padding: 14px 40px;
+      font-size: 16px;
+      border: none;
+      border-radius: 999px;
+      background: linear-gradient(to right, #ff4d88, #ff6ec4);
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 0 18px #ff4d8899;
+      transition: transform 0.2s ease;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    #result {
+      margin-top: 32px;
+      padding: 22px;
+      width: 100%;
+      border-radius: 18px;
+      background: rgba(0,0,0,0.3);
+      font-size: 20px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(255,255,255,0.1);
+      white-space: pre-wrap;
+      line-height: 1.6;
+      transition: all 0.3s ease;
+    }
+
+    .real {
+      background-color: rgba(0, 255, 128, 0.1);
+      color: #00ffae;
+      border: 2px solid #00ffae55;
+    }
+
+    .fake {
+      background-color: rgba(255, 0, 64, 0.1);
+      color: #ff6b81;
+      border: 2px solid #ff6b8166;
+    }
+
+    .neutral {
+      background-color: rgba(255, 255, 255, 0.05);
+      color: #ccc;
+      border: 1px solid #ffffff22;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 36px; }
+      .subtitle { font-size: 15px; }
+      button { width: 100%; }
+    }
+    .rainbow-heading {
+  font-size: 44px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+  background: linear-gradient(90deg, #ff5f6d, #ffc371, #47fced, #6a5acd, #ff5f6d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow-shift 5s infinite linear;
+}
+
+@keyframes rainbow-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #ffffffcc;
+  transition: color 0.3s, transform 0.2s;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #fff;
+  transform: scale(1.1);
+}
+.gpt-tag {
+  font-weight: 700;
+  background: linear-gradient(90deg, #ff4da6, #9f6fff, #00d4ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glow 2s ease-in-out infinite;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 1px;
+}
+
+@keyframes glow {
+  0%, 100% {
+    text-shadow: 0 0 6px #ff80bf, 0 0 10px #9f6fff;
+  }
+  50% {
+    text-shadow: 0 0 12px #00d4ff, 0 0 16px #ff80bf;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .about-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-image img {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .about-box {
+    padding: 15px;
+    font-size: 14px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .button {
+    font-size: 16px;
+    padding: 12px 20px;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <header>
+  <div class="logo">NexuTruth 🔗</div>
+  <nav>
+    <a href="#" onclick="redirectWithLoaderBlur('index.html')">Home</a>
+<a href="news.html">Get Started</a>
+<a href="#" onclick="redirectWithLoaderBlur('about.html')">About Us</a>
+  </nav>
+</header>
+
+
+  <main>
+    <h1 class="rainbow-heading">AI FAKE NEWS DETECTOR </h1>
+    <p class="subtitle">
+  Powered by real-time AI  
+  <span class="gpt-tag">GPT 3.5 TURBO</span> — <strong>instantly check</strong> if any news content is <strong>suspicious</strong> or <strong>genuine</strong>.<br>
+  ⚠️ <strong>Note:</strong> While our AI strives to provide <strong>accurate results</strong>, it's <strong>not always perfect</strong>. Even smart systems can make mistakes — please <strong>verify critical information</strong> from trusted sources. 😊
+</p>
+
+
+    <div class="box">
+      <textarea id="newsInput" placeholder="Paste or write your news article here..."></textarea>
+      <button onclick="checkNews()">Check News 🔍</button>
+      <div id="result"></div>
+    </div>
+  </main>
+
+  <script>
+    const resultBox = document.getElementById("result");
+    const API_URL = "REPLACE_YOUR_API_OR_BACKEND_LINK_HERE";
+
+    async function checkNews() {
+      const input = document.getElementById("newsInput").value.trim();
+      resultBox.className = "";
+      if (!input) {
+        resultBox.innerText = "⚠️ Please enter some content to verify.";
+        resultBox.classList.add("neutral");
+        return;
+      }
+
+      resultBox.innerText = "⏳ AI is analyzing the article...";
+      resultBox.classList.add("neutral");
+
+      try {
+        const res = await fetch(API_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ content: input })
+        });
+
+        const data = await res.json();
+        const formatted = formatReply(data.result || "AI could not analyze.");
+
+        typeEffect(resultBox, formatted.text, formatted.style);
+      } catch (e) {
+        resultBox.innerText = "❌ Error: " + e.message;
+        resultBox.classList.add("fake");
+      }
+    }
+
+    function formatReply(text) {
+  const lower = text.toLowerCase();
+
+  const realReplies = [
+    "✅ Looks real! Time to trust 😌",
+    "✅ Totally true, pinky promise! 💅",
+    "✅ This one passes the vibe check 💖",
+    "✅ Realer than your group project 😭",
+    "✅ Verified by AI cuteness core 🤖✨",
+    "✅ 100% genuine… just like grandma’s stories 💅",
+    "✅ Truth certified, no cap detected 🧢",
+    "✅ Feels authentic – even AI blushed! 🫣",
+    "✅ This headline’s cleaner than your browser history 🧼",
+    "✅ That’s some Grade-A truth steak 🥩👌",
+    "✅ Reality confirmed with sprinkles 🍩",
+    "✅ More real than your last crush 😋",
+    "✅ Solid as a cat landing on its feet 🐈",
+    "✅ AI says this one’s fresher than morning chai ☕",
+    "✅ Smells like truth, tastes like facts 😋",
+    "✅ It’s the real deal, no filters needed 🎯",
+    "✅ Straight from the truth factory 🏭",
+    "✅ As real as your mom’s WiFi password 😤",
+    "✅ This story = verified vibes only 🔍✨",
+    "✅ AI hugged this one before confirming 🤗",
+    "✅ Honestly? Even Sherlock would approve 🕵️‍♂️"
+  ];
+
+  const fakeReplies = [
+    "🚫 Might be fake! Sus detected 🧐",
+    "🚫 That’s sketchy af 👀",
+    "🚫 AI says nah fam 💀",
+    "🚫 Looks faker than my exam excuses 😅",
+    "🚫 Cap! That’s some spicy fake news 🌶️",
+    "🚫 Could be cooked 🍳 Be cautious!",
+    "🚫 Warning: 99.9% drama, 0.1% truth 🎭",
+    "🚫 More fiction than a Marvel movie 🎬",
+    "🚫 That headline’s got plot holes bigger than my life choices 😩",
+    "🚫 This ain’t it chief 😬",
+    "🚫 AI couldn’t stop laughing at this one 😂",
+    "🚫 Sussy headline alert! 🚨",
+    "🚫 Fake-o-meter is screaming 💢",
+    "🚫 Not even Google could verify this one 🧨",
+    "🚫 Looks AI-generated… by a tired intern 💤",
+    "🚫 Imagination level: Over 9000! 💫",
+    "🚫 Lies served on a silver platter 🍽️",
+    "🚫 Plot twist: It’s totally made up 📚",
+    "🚫 That’s a no from me, dawg 🐶",
+    "🚫 AI says this belongs in the fiction section 📖",
+    "🚫 This headline needs a reality check 🐶"
+  ];
+
+  const neutralReplies = [
+    "🤖 Hmm… AI's thinking 🤔",
+    "🤖 Can't decide — looks tricky 🧠",
+    "🤖 Maybe real, maybe sus... 😵‍💫",
+    "🤖 AI’s still learning, so take this with salt 🧂",
+    "🤖 This one’s a tough cookie 🍪",
+    "🤖 Need a human’s sixth sense for this 🧙‍♂️",
+   "🤖 Somewhere between ‘truth’ and ‘huh?’ 🤷",
+    "🤖 The answer’s floating in a quantum state 🧪",
+    "🤖 AI had to phone a friend 📞",
+    "🤖 Could go either way… like my WiFi signal 📶"
+  ];
+
+  // Check for presence of keywords
+  if (lower.includes("true") || lower.includes("real")) {
+    return {
+      text: realReplies[Math.floor(Math.random() * realReplies.length)],
+      style: "real"
+    };
+  } else if (lower.includes("fake") || lower.includes("false")) {
+    return {
+      text: fakeReplies[Math.floor(Math.random() * fakeReplies.length)],
+      style: "fake"
+    };
+  } else {
+    return {
+      text: neutralReplies[Math.floor(Math.random() * neutralReplies.length)],
+      style: "neutral"
+    };
+  }
+}
+
+
+    function typeEffect(el, text, style) {
+      el.innerText = "";
+      el.className = style;
+      let i = 0;
+      const typing = setInterval(() => {
+        el.innerText += text.charAt(i);
+        i++;
+        if (i >= text.length) clearInterval(typing);
+      }, 30);
+    }
+  </script>
+  
+
+<div id="loader-overlay">
+  <div class="loader"></div>
+</div>
+<style>
+#loader-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    .loader {
+      border: 6px solid rgba(255, 255, 255, 0.2);
+      border-top: 6px solid #fff;
+      border-radius: 50%;
+      width: 75px;
+      height: 75px;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+
+.gpt-tag {
+  background: linear-gradient(135deg, #ff4ec4, #00d4ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  font-size: 1.05em;
+  padding: 4px 10px;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.15);
+  animation: pulseGlow 2s infinite ease-in-out;
+  display: inline-block;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    text-shadow: 0 0 8px rgba(255, 100, 200, 0.4);
+  }
+  50% {
+    text-shadow: 0 0 12px rgba(0, 212, 255, 0.7);
+  }
+}
+
+</style>
+<script>
+  function redirectWithLoaderBlur(page) {
+    const overlay = document.getElementById("loader-overlay");
+    overlay.style.display = "flex"; 
+    setTimeout(() => {
+      window.location.href = page;
+    }, 1200); 
+  }
+
+  // Hide loader if user presses back
+  window.addEventListener("pageshow", () => {
+    const overlay = document.getElementById("loader-overlay");
+    if (overlay) overlay.style.display = "none";
+  });
+</script>
+
+
+</body>
+</html>

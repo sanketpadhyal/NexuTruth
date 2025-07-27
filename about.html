@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About • NexuTruth 🔗</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="assets/favicon4.png"/>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: white;
+      overflow-x: hidden;
+      background: 
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url('assets/EduLiner.png') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    nav a {
+      color: #fff;
+      margin-left: 1.5rem;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .about-main {
+      padding: 4rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .about-image-glow-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      border-radius: 25px;
+      padding: 1rem;
+      display: inline-block;
+      animation: floatUpDown 6s ease-in-out infinite;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+      margin-bottom: 2rem;
+    }
+
+    .about-image-glow-card img {
+      max-width: 700px;
+      width: 90%;
+      height: auto;
+      border-radius: 20px;
+      filter: drop-shadow(0 5px 20px rgba(255, 255, 255, 0.15));
+    }
+
+    @keyframes floatUpDown {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+
+    .about-box {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      padding: 30px;
+      color: #fff;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 0 25px rgba(173, 216, 230, 0.3), 
+                  0 0 60px rgba(255, 105, 180, 0.2);
+      transition: all 0.4s ease-in-out;
+      animation: glowPulse 3s ease-in-out infinite;
+      transform: translateX(05px);
+      max-width: 800px;
+    }
+
+    @keyframes glowPulse {
+      0%, 100% {
+        box-shadow: 0 0 20px rgba(173, 216, 230, 0.25), 
+                    0 0 40px rgba(255, 105, 180, 0.15);
+      }
+      50% {
+        box-shadow: 0 0 30px rgba(173, 216, 230, 0.4), 
+                    0 0 70px rgba(255, 105, 180, 0.25);
+      }
+    }
+
+    .about-box h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .about-box p {
+      line-height: 1.8;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .about-box a {
+      color: #00bfff;
+      text-decoration: none;
+    }
+
+    .about-box a:hover {
+      text-decoration: underline;
+    }
+
+    .footer {
+      background-color: rgba(0, 0, 0, 0.6);
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 70px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      width: 95%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #loader-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    .loader {
+      border: 6px solid rgba(255, 255, 255, 0.2);
+      border-top: 6px solid #fff;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    @media (max-width: 768px) {
+      .about-box {
+        transform: none;
+        padding: 1.5rem;
+      }
+
+      .about-box h2 {
+        font-size: 1.6rem;
+      }
+
+      .about-box p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">NexuTruth 🔗</div>
+    <nav>
+      <a href="#" onclick="redirectWithLoaderBlur('index.html')">Home</a>
+      <a href="#" onclick="redirectWithLoaderBlur('news.html')">Get Started</a>
+      <a href="about.html">About Us</a>
+    </nav>
+  </header>
+
+  <main class="about-main">
+    <section class="about-section">
+      <div class="about-image-glow-card">
+        <img src="assets/github.png" alt="GitHub Screenshot" />
+      </div>
+      <div class="about-box">
+        <h2>About the Creator 🙋‍♂️</h2>
+        <p>🙋‍♂️ Hey there! I'm Sanket Padhyal, the creator of <strong>NexuTruth 🔗</strong> — a smart and easy-to-use platform built to fight misinformation and help everyone verify news content with the power of AI. 🧠✨</p>
+        <p>🚫 With no formal coding background, I combined logic, curiosity, and creativity to bring this idea to life. NexuTruth 🔗 is the result of late-night learning, self-exploration, and a mission to make digital spaces more trustworthy. 🔍⚡</p>
+        <p>🚀 In 2025 and beyond, I'm on a journey to build impactful tech — crafting tools in AI, education, and digital safety that can truly make a difference.</p>
+        <p>📫 Wanna connect or collaborate? Check me out on GitHub 👉 <a href="https://github.com/sanketpadhyal" target="_blank">@sanketpadhyal</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <p>© 2025 All Rights Reserved<strong> · NexuTruth 🔗</strong><br>Blending tech & creativity — one idea at a time.</p>
+    </div>
+  </footer>
+
+  <div id="loader-overlay">
+    <div class="loader"></div>
+  </div>
+
+  <script>
+    function redirectWithLoaderBlur(page) {
+      const overlay = document.getElementById("loader-overlay");
+      overlay.style.display = "flex";
+      setTimeout(() => {
+        window.location.href = page;
+      }, 1200);
+    }
+
+    window.addEventListener("pageshow", () => {
+      const overlay = document.getElementById("loader-overlay");
+      if (overlay) overlay.style.display = "none";
+    });
+  </script>
+</body>
+</html>

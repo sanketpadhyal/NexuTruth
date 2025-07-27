@@ -1,0 +1,246 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; 
+  font-family: 'Segoe UI', sans-serif;
+  background: url("assets/bg.png") no-repeat center center / cover;
+  color: white;
+  overflow-x: hidden;
+  background-attachment: fixed; 
+}
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #ffffffcc;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 60px;
+}
+
+.left-section {
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-illustration {
+  width: 400px;
+  max-width: 100%;
+  animation: float 5s ease-in-out infinite;
+}
+
+.floating-tag {
+  position: absolute;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background-color: #fff;
+  color: #000;
+  font-weight: bold;
+  font-size: 14px;
+  animation: float 4s ease-in-out infinite;
+}
+
+.floating-tag.html { top: 40%; left: 10%; background-color: #f16529; color: white; }
+.floating-tag.js { top: 20%; right: 15%; background-color: #f7df1e; color: black; }
+.floating-tag.css { bottom: 20%; left: 25%; background-color: #2965f1; color: white; }
+.floating-tag.cpp { bottom: 10%; right: 20%; background-color: #00599c; color: white; }
+
+.right-section {
+  flex: 1;
+  padding-left: 50px;
+}
+
+h1 {
+  font-size: 48px;
+  line-height: 1.2;
+}
+
+.highlight {
+  color: #ff4d88;
+}
+
+p {
+  font-size: 18px;
+  margin-top: 20px;
+  line-height: 1.6;
+  max-width: 500px;
+  color: #dddddd;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Footer styling */
+.footer {
+  background: rgba(255, 255, 255, 0.1); 
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px); 
+  padding: 20px 60px;
+  text-align: center;
+  color: white;
+  font-size: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  z-index: 2;
+}
+.footer a {
+  color: white;
+  text-decoration: underline;
+}
+
+
+.footer-container p {
+  margin: 5px 0;
+}
+
+.footer-container strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.footer-container span {
+  color: #4dabf7;
+  font-weight: 500;
+}
+
+@keyframes slideUpFade {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+.hero-section, .main-content {
+  margin-bottom: 80px; 
+}
+
+@keyframes bobbing {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.footer {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 20px 60px;
+  text-align: center;
+  color: white;
+  font-size: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  z-index: 2;
+  animation: bobbing 3s ease-in-out infinite;
+  margin-top: 60px; 
+}
+
+.footer a {
+  color: white;
+  text-decoration: underline;
+}
+
+
+#loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 9999;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.4s ease;
+}
+
+.loader {
+  border: 6px solid #ffffff;
+  border-top: 6px solid #ff4d88;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .about-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-image img {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .about-box {
+    padding: 15px;
+    font-size: 14px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .button {
+    font-size: 16px;
+    padding: 12px 20px;
+  }
+}
