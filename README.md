@@ -3,6 +3,7 @@
 **NexuTruth** is a creative, AI-powered website that helps users detect **fake news** instantly. Designed with an elegant, colorful UI and optimized for both desktop 💻 and mobile 📱, this project blends frontend design with backend AI intelligence.
 
 **🔗 NexuTruth** USES BACKEND FOR OPERATING API FUNCTIONS SO NO FEAR OF API AND ALL 🔐
+
 ---
 
 ## ✨ Features
