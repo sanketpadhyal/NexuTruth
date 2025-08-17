@@ -65,6 +65,7 @@ You can test the AI with fun and relevant questions like:
 
 ![Landing](assets/bg.png)
 *Landing page with cute floating tech icons.*
+*Try to use low size or compressed jpg/png background for fast loading of website.*
 
 ---
 
