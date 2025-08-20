@@ -109,5 +109,4 @@ Stay informed. Stay smart.
 
 ## 📄 License  
 
-This project is open-source under the **MIT License**.  
 Made with ❤ by **Sanket Padhyal**.  
