@@ -1,90 +1,113 @@
-# 🔗 NexuTruth — AI Fake News Defender
+# 🔗 NexuTruth — AI Fake News Defender  
 
-**NexuTruth** is a creative, AI-powered website that helps users detect **fake news** instantly. Designed with an elegant, colorful UI and optimized for both desktop 💻 and mobile 📱, this project blends frontend design with backend AI intelligence.
+**NexuTruth** is a creative, AI-powered website that helps users detect **fake news** instantly.  
+Designed with an elegant, colorful UI and optimized for both desktop 💻 and mobile 📱, this project blends frontend design with backend AI intelligence.  
 
-**🔗 NexuTruth** USES BACKEND FOR OPERATING API FUNCTIONS SO NO FEAR OF API AND ALL 🔐 AND BACKEND IS MANUAL SO IF WEB IS NOT WORKING TRY TO CONTACT ADMIN FOR TURNING ON BACKEND!
-
----
-
-## ✨ Features
-
-- 🎯 **Fake News Detection** — Uses AI to analyze and identify misinformation.
-- 📱 **Responsive Design** — Minimal mobile-optimized for all devices.
-- 🌈 **Cute & Colorful UI** — Floating icons, blur effects, and glowing visuals.
-- 🔁 **Smooth Page Transitions** — Full-screen loader with blur before redirection.
-- 🧠 **Easy to Use** — Just type your query and let the AI handle the logic.
+⚡ **Important Note:**  
+NexuTruth **uses a Replit backend (`index.js`) for API functions** 🔐, so you don’t need to worry about exposing API keys.  
+Since the backend is manual, if the web app isn’t working, please **contact the admin to turn on the backend**.  
 
 ---
 
-## 🚀 Live Demo
-
-🔗 [Visit NexuTruth (Live)](https://resplendent-zabaione-82cf2d.netlify.app)
-
----
-
-## 🧪 Try Sample Questions
-
-You can test the AI with fun and relevant questions like:
-
-- ✅ Is the Earth flat?
-- ✅ Did humans land on the moon?
-- ✅ Does garlic cure COVID?
-- ✅ Is chocolate healthy?
-- ✅ Can you trust every headline?
+![Status](https://img.shields.io/badge/Status-Active-brightgreen)  
+![Frontend](https://img.shields.io/badge/Frontend-HTML%20%7C%20CSS%20%7C%20JavaScript-orange)  
+![Backend](https://img.shields.io/badge/Backend-Node.js%20%7C%20Express%20(on%20Replit)-blue)  
+![AI](https://img.shields.io/badge/AI-OpenAI%20%7C%20OpenRouter-purple)  
+![Hosting](https://img.shields.io/badge/Hosting-Netlify%20%7C%20Replit-lightgrey)  
+![Made By](https://img.shields.io/badge/Made%20By-Sanket%20Padhyal-blue)  
 
 ---
 
-## 🧱 Built With
+## ✨ Features  
 
-- **HTML5** | **CSS3** | **JavaScript (Vanilla)**
-- **Cloudflare Workers** (to hide API key 🔐)
-- **OpenAI / OpenRouter API** (for real-time responses)
-- **Netlify / GitHub Pages** (for deployment)
-
----
-
-## 📂 Pages Included
-
-| Page        | Description                             |
-|-------------|-----------------------------------------|
-| `index.html` | Landing page with floating icons, title |
-| `news.html`  | News checker with AI backend connection |
-| `about.html` | Creator info with glowing UI section    |
+- 🎯 **Fake News Detection** — Uses AI to analyze and identify misinformation.  
+- 📱 **Responsive Design** — Optimized for mobile and desktop devices.  
+- 🌈 **Cute & Colorful UI** — Floating icons, blur effects, and glowing visuals.  
+- 🔁 **Smooth Page Transitions** — Full-screen loader with blur before redirection.  
+- 🧠 **Easy to Use** — Just type your query and let the AI handle the logic.  
 
 ---
 
-## 👨‍💻 About the Creator
+## 🚀 Live Demo  
 
-🙋‍♂️ Hi, I’m **Sanket Padhyal**, the creator of NexuTruth 🔗 — a passionate self-learner who loves building creative tools combining **AI**, **design**, and **code**. I made this to help people verify information easily and smartly.
-
-👉 [GitHub Profile](https://github.com/sanketpadhyal)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-green?style=for-the-badge)](https://nexutruth.netlify.app)  
 
 ---
 
-## 📸 Screenshots
+## 🧪 Try Sample Questions  
 
-![Landing](assets/bg.png)
-*Landing page with cute floating tech icons.*
-*Try to use low size or compressed jpg/png background for fast loading of website.*
-
----
-
-## ⚙️ Setup (If You Want to Fork It)
-
-1. Clone this repository
-2. Make sure your API key is safely proxied (use Cloudflare Workers or backend)
-3. Customize UI and deploy using Netlify or GitHub Pages
+You can test the AI with fun and relevant questions like:  
+- ✅ Is the Earth flat?  
+- ✅ Did humans land on the moon?  
+- ✅ Does garlic cure COVID?  
+- ✅ Is chocolate healthy?  
+- ✅ Can you trust every headline?  
 
 ---
 
-## ⭐ Show Support
+## 🧱 Built With  
+
+- **Frontend** → HTML5, CSS3, JavaScript (Vanilla)  
+- **Backend** → Node.js + Express (`index.js` hosted on Replit)  
+- **AI Integration** → OpenAI / OpenRouter API  
+- **Hosting** → Netlify (Frontend) + Replit (Backend)  
+
+---
+
+## 📂 Pages Included  
+
+| Page        | Description                              |
+|-------------|------------------------------------------|
+| `index.html` | Landing page with floating icons, title  |
+| `news.html`  | News checker with AI backend connection  |
+| `about.html` | Creator info with glowing UI section     |  
+
+---
+
+## 🖼️ Background Image Usage  
+
+We use a **custom background image (`bg.png`)** for enhancing the design:  
+
+![Background Preview](assets/bg.png)  
+
+⚡ **Performance Note:**  
+Always use **compressed or low-sized JPG/PNG images** for backgrounds to ensure **fast loading** and **smooth user experience**.  
+
+---
+
+## 👨‍💻 About the Creator  
+
+🙋‍♂️ Hi, I’m **Sanket Padhyal**, the creator of **NexuTruth 🔗** — a passionate self-learner who loves building creative tools combining **AI, design, and code**.  
+I made this project to help people verify information easily and smartly.  
+
+👉 [GitHub Profile](https://github.com/sanketpadhyal)  
+
+---
+
+## ⚙️ Setup (For Developers / Forking)  
+
+1. Clone this repository  
+2. Run the backend (`index.js`) on Replit or local Node.js server  
+3. Safely store your API key in backend (do not expose in frontend)  
+4. Customize UI & deploy frontend using **Netlify** or **GitHub Pages**  
+
+---
+
+## 👑 Ownership  
+
+© 2025 **Sanket Padhyal**. All rights reserved.  
+
+---
+
+## ⭐ Show Support  
 
 If you like this project, give it a ⭐ and share it!  
 Stay informed. Stay smart.  
-**NexuTruth 🔗 — Your AI News Guardian**
+**NexuTruth 🔗 — Your AI News Guardian**  
 
 ---
 
-## 📄 License
+## 📄 License  
 
-This project is open-source and free to use. Made with ❤ by Sanket Padhyal.
+This project is open-source under the **MIT License**.  
+Made with ❤ by **Sanket Padhyal**.  
