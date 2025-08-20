@@ -106,7 +106,3 @@ Stay informed. Stay smart.
 **NexuTruth 🔗 — Your AI News Guardian**  
 
 ---
-
-## 📄 License  
-
-Made with ❤ by **Sanket Padhyal**.  
