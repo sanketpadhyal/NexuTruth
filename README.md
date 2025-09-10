@@ -18,6 +18,13 @@ Since the backend is manual, if the web app isn’t working, please **contact th
 
 ---
 
+# 📢 ALERT: BACKEND IS NOW 24×7 ONLINE 
+
+✅ The **NexuTruth Backend** is now fully hosted on **Render**, which means the project is **available 24×7 without downtime**.  
+⚡ Your experience is smoother, faster, and always active! 
+
+---
+
 ## ✨ Features  
 
 - 🎯 **Fake News Detection** — Uses AI to analyze and identify misinformation.  
